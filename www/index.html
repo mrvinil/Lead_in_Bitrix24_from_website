@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Попап форма + отправка + создание лида в CRM Битрикс24</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/popup.css">
+  </head>
+  <body>
+    <div class="content-block">
+      <div class="product">
+        <div class="product-img">
+          <img class="product-img__img" src="./img/product/1.jpg" alt="СМ-01">
+        </div>
+        <h3 class="product__name">СМ-01</h3>
+        <div class="product-info">
+          <p class="product-info__title">Сантехнический модуль СМ-01</p>
+          <p class="product-info__size">Размеры: 2.0x2.0</p>
+          <p class="product-info__price">от 7000 руб/месяц</p>
+        </div>
+        <a href="#" class="btn btn--cta product__button" data-target="callback">Арендовать</a>
+      </div>
+      
+      <div class="product">
+        <div class="product-img">
+          <img class="product-img__img" src="./img/product/2.jpg" alt="СМ-02">
+        </div>
+        <h3 class="product__name">СМ-02</h3>
+        <div class="product-info">
+          <p class="product-info__title">Сантехнический модуль СМ-02</p>
+          <p class="product-info__size">Размеры: 4.0x3.0</p>
+          <p class="product-info__price">от 7000 руб/месяц</p>
+        </div>
+        <a href="#" class="btn btn--cta product__button" data-target="callback">Арендовать</a>
+      </div>
+      
+      <div class="product">
+        <div class="product-img">
+          <img class="product-img__img" src="./img/product/3.jpg" alt="СМ-03">
+        </div>
+        <h3 class="product__name">СМ-03</h3>
+        <div class="product-info">
+          <p class="product-info__title">Сантехнический модуль СМ-03</p>
+          <p class="product-info__size">Размеры: 4.0x3.0</p>
+          <p class="product-info__price">от 7000 руб/месяц</p>
+        </div>
+        <a href="#" class="btn btn--cta product__button" data-target="callback">Арендовать</a>
+      </div>
+    </div>
+
+    <!-- POPUP -->
+    <div class="popup popup-callback">
+      <div class="popup__container popup-callback__container" id="callbackFirstForm">
+        <button class="popup__close popup-callback__close link" type="button"></button>
+        <form action="#" class="popup__form" id="popupcallback" novalidate>
+          <h2 class="popup__title">Введите, пожалуйста, свой номер телефона, наши специалисты свяжутся с Вами</h2>
+          <fieldset class="popup__input-wrap">
+            <label class="popup__label">
+              <!-- Скрытые поля. Сюда будут записыватся значения конкретного товара после клика на кнопку "Арендовать", а потом запишутся в CRM -->
+              <input type="hidden" name="productName" value="">
+              <input type="hidden" name="productPrice" value="">
+              <input type="hidden" name="productSize" value="">
+              <input type="hidden" name="productUtm" value="Любая UTM метка. Можно использовать для сквозной аналитики в CRM">
+              <input class="popup__input"
+                     id="tel-input"
+                     name="phone"
+                     type="tel"
+                     placeholder="+7"
+                     data-tel-input
+                     minlength="17"
+                     maxlength="18"
+                     required
+              >
+              <span class="popup__error tel-input-error"></span>
+            </label>
+            <button class="btn btn--yellow popup__btn" type="submit">Жду звонка</button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="popup__container popup-callback__container popup__success" id="message">
+        <button class="popup__close popup-callback__close link" type="button"></button>
+        <div class="popup__form">
+          <h2 class="popup__title">Спасибо за заявку!</h2>
+          <p class="popup__desc">Наши менеджеры уже обрабатывают заявку</p>
+          <span href="#" class="btn btn--yellow popup__btn popup-callback__close">Понятно</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./assets/js/phoneinput.js"></script>
+    <script src="./assets/js/popup_callback.js"></script>
+    <script src="./assets/js/popup_validate.js"></script>
+  </body>
+</html>
